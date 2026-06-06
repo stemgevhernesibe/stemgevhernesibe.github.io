@@ -1,0 +1,101 @@
+/* --- GENEL SIFIRLAMA VE FONTLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcfbfa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- SECTION (BÖLÜM) AYARLARI --- */
+.page-section {
+    min-height: 80vh;
+    /* Her bölüm ekranın büyük kısmını kaplar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+}
+
+/* Bölümleri görsel olarak ayırmak için hafif arka plan renk geçişleri */
+#section1 {
+    background-color: #f9f8f5;
+}
+
+#section2 {
+    background-color: #f0f2f5;
+}
+
+#section3 {
+    background-color: #e9ecf0;
+}
+
+/* --- İÇERİK KAPSAYICI (KOLON DÜZENİ) --- */
+.section-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    /* İki div arasındaki boşluk */
+}
+
+/* --- 2 ADET İÇERİK DİVİ --- */
+.content-box {
+    flex: 1;
+    /* İki kutunun da eşit genişlikte olmasını sağlar */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid #2c3e50;
+    /* Şık bir üst çizgi vurgusu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Kutunun üzerine gelince hafif bir hareket efekti */
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Başlık stili */
+.content-box h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Paragraf stili */
+.content-box p {
+    font-size: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Vurgu renkleri (Her bölümün ilk kutusuna farklı bir hava katmak için) */
+#section2 .content-box {
+    border-top-color: #dfb76c;
+}
+
+#section3 .content-box {
+    border-top-color: #16a085;
+}
+
+/* --- RESPONSIVE (MOBİL UYUMLULUK) --- */
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column;
+        /* Mobilde yan yana olan divler alt alta gelir */
+        gap: 25px;
+    }
+
+    .page-section {
+        padding: 60px 5%;
+    }
+}

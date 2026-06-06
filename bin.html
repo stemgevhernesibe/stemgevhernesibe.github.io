@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düz Sayfa Tasarımı - 5 Section Yapısı</title>
+    <style>
+        /* --- GENEL SIFIRLAMA VE FONTLAR --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcfbfa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- SECTION (BÖLÜM) AYARLARI --- */
+        .page-section {
+            min-height: 80vh; /* Her bölüm ekranın büyük kısmını kaplar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 10%;
+        }
+
+        /* Bölümleri görsel olarak ayırmak için hafif arka plan renk geçişleri */
+        #section1 { background-color: #f9f8f5; }
+        #section2 { background-color: #f0f2f5; }
+        #section3 { background-color: #e9ecf0; }
+        #section4 { background-color: #f5f0f6; }
+        #section5 { background-color: #fbf5ee; }
+
+        /* --- İÇERİK KAPSAYICI (KOLON DÜZENİ) --- */
+        .section-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            gap: 50px; /* İki div arasındaki boşluk */
+        }
+
+        /* --- 2 ADET İÇERİK DİVİ --- */
+        .content-box {
+            flex: 1; /* İki kutunun da eşit genişlikte olmasını sağlar */
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            border-top: 4px solid #2c3e50; /* Varsayılan üst çizgi vurgusu */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Kutunun üzerine gelince hafif bir hareket efekti */
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Başlık stili */
+        .content-box h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Paragraf stili */
+        .content-box p {
+            font-size: 15px;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Bölümlere Göre Özel Vurgu Renkleri */
+        #section1 .content-box { border-top-color: #2c3e50; } /* Koyu Mavi */
+        #section2 .content-box { border-top-color: #dfb76c; } /* Altın / Taş */
+        #section3 .content-box { border-top-color: #16a085; } /* Turkuaz */
+        #section4 .content-box { border-top-color: #9b59b6; } /* Mor */
+        #section5 .content-box { border-top-color: #e67e22; } /* Turuncu */
+
+        /* --- RESPONSIVE (MOBİL UYUMLULUK) --- */
+        @media (max-width: 768px) {
+            .section-container {
+                flex-direction: column; /* Mobilde yan yana olan divler alt alta gelir */
+                gap: 25px;
+            }
+            .page-section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BÖLÜM (SECTION) -->
+    <section id="section1" class="page-section">
+        <div class="section-container">
+            
+            <!-- 1. Bölüm - 1. Div -->
+            <div class="content-box">
+                <h3>Gevher Nesibe Sultan'ın Vasiyeti</h3>
+                <p>Gevher Nesibe Sultan, amansız bir hastalığa yakalandığında abisi Sultan I. Gıyaseddin Keyhüsrev'e kendi adına bir şifahane yapılması vasiyetinde bulunmuştur. Bu vasiyet, sadece bir prensesin son arzusu değil; Anadolu'da tıp biliminin kurumsallaşmasının da ilk adımı olmuştur.</p>
+            </div>
+
+            <!-- 1. Bölüm - 2. Div -->
+            <div class="content-box">
+                <h3>Külliyenin İnşası ve Mimarisi</h3>
+                <p>1206 yılında tamamlanan yapı, tıp medresesi ve şifahane olmak üzere iki bitişik binadan oluşur. Selçuklu taş işçiliğinin en yalın ve anıtsal örneklerinden biri olan bu eser, revaklı avluları ve merkezi plan şemasıyla hastaların huzur bulacağı bir atmosfer sunar.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. BÖLÜM (SECTION) -->
+    <section id="section2" class="page-section">
+        <div class="section-container">
+            
+            <!-- 2. Bölüm - 1. Div -->
+            <div class="content-box">
+                <h3>Darüşşifa ve Klinik Tedaviler</h3>
+                <p>Şifahane kısmında iç hastalıkları, göz hastalıkları ve cerrahi gibi temel branşlarda dönemin en ileri tedavi yöntemleri uygulanırdı. Hekimler, hastaların durumuna göre özel diyetler, bitkisel karışımlar ve macunlar hazırlayarak bütüncül bir tedavi süreci işletirdi.</p>
+            </div>
+
+            <!-- 2. Bölüm - 2. Div -->
+            <div class="content-box">
+                <h3>Gıyasiye Tıp Medresesi</h3>
+                <p>Şifahanenin hemen yanındaki medresede ise teorik tıp eğitimi verilirdi. Öğrenciler, sabahları usta hekimlerden ders dinler, öğleden sonra ise şifahane kısmında yatan hastaların başında pratik yaparak deneyim kazanırlardı. Bu yönüyle dünyanın ilk uygulamalı tıp fakültelerindendir.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. BÖLÜM (SECTION) -->
+    <section id="section3" class="page-section">
+        <div class="section-container">
+            
+            <!-- 3. Bölüm - 1. Div -->
+            <div class="content-box">
+                <h3>Müzik ve Su Sesinin İyileştirici Gücü</h3>
+                <p>Gevher Nesibe'yi çağdaşlarından ayıran en önemli özelliklerden biri, akıl ve ruh sağlığı hastalarını zincire vurmak yerine su sesi ve müzik makamlarıyla tedavi etmesidir. Ortadaki şadırvandan akan suyin ritmi, ney ve ud sesleriyle birleşerek zihni dinginleştirirdi.</p>
+            </div>
+
+            <!-- 3. Bölüm - 2. Div -->
+            <div class="content-box">
+                <h3>Günümüzdeki Kültürel Miras</h3>
+                <p>Yüzyıllar boyunca şifa dağıtan bu muazzam külliye, günümüzde Selçuklu Uygarlığı Müzesi olarak hizmet vermektedir. Ziyaretçiler, sergilenen tıbbi aletler, balmumu heykeller ve interaktif odalar sayesinde Selçuklu döneminin tıp dehasına yakından tanıklık edebilmektedir.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. BÖLÜM (SECTION) -->
+    <section id="section4" class="page-section">
+        <div class="section-container">
+            
+            <!-- 4. Bölüm - 1. Div -->
+            <div class="content-box">
+                <h3>Aromaterapi ve Koku Duyusu</h3>
+                <p>Selçuklu hekimleri, kokuların doğrudan beyindeki duygu merkezlerini uyardığını çok iyi biliyorlardı. Şifahanenin özel odalarında, gül, nane, zambak ve öd ağacı gibi bitkilerin yağları yakılarak solunum yolları rahatlatılır ve anksiyete seviyeleri kontrol altına alınırdı.</p>
+            </div>
+
+            <!-- 4. Bölüm - 2. Div -->
+            <div class="content-box">
+                <h3>Farmakoloji ve Şifalı Reçeteler</h3>
+                <p>Medresede teorik olarak incelenen şifalı bitkiler, darüşşifanın hemen yanındaki eczane alanında özenle işlenirdi. Doğadan elde edilen kökler, yapraklar ve ballar karıştırılarak kişiye özel macunlar üretilir, eczacılık disiplini bilimsel temellere dayandırılırdı.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. BÖLÜM (SECTION) -->
+    <section id="section5" class="page-section">
+        <div class="section-container">
+            
+            <!-- 5. Bölüm - 1. Div -->
+            <div class="content-box">
+                <h3>Işık, Renk ve Nöro-Estetik</h3>
+                <p>Yapının pencerelerinden süzülen doğal ışığın gün içindeki açıları ve bazı pencerelerde kullanılan renkli camlar, hastaların biyolojik saatlerini düzenlemek için kullanılırdı. Ayrıca taş duvarlardaki geometrik Selçuklu süslemeleri zihni dinlendirici birer görsel terapi ögesiydi.</p>
+            </div>
+
+            <!-- 5. Bölüm - 2. Div -->
+            <div class="content-box">
+                <h3>Evrensel Tıp Tarihindeki Yeri</h3>
+                <p>Gevher Nesibe Şifahanesi, Batı dünyasında akıl hastalarının dışlandığı bir dönemde insani ve bilimsel yaklaşımıyla tıbbın zirve noktalarından biri olmuştur. Hem eğitim hem de tedavi işlevini tek çatı altında toplayan bu vizyon, modern hastane sisteminin de temelini oluşturur.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

@@ -263,12 +263,32 @@ body {
         grid-template-columns: repeat(2, 1fr);
         /* Mobilde 2x6 düzenine döner */
     }
+
+    .gallery-item {
+        height: 40vw;
+        min-height: 180px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Basitlik adına mobilde linkleri gizledik */
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .gallery-item {
+        height: 55vw;
+    }
+}
+
+@media (max-width: 350px) {
     .gallery-grid {
         grid-template-columns: 1fr;
         /* Çok küçük ekranlarda tek kolon */
+    }
+
+    .gallery-item {
+        height: 65vw;
     }
 
     .nav-links {
