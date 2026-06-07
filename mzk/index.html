@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gevher Nesibe Şifahanesi: Müzikle Tedavi Ekolü</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #bc986a;       /* Dingin Altın / Kum Tonu */
+            --primary-dark: #8d6e45;
+            --secondary: #1e3d59;     /* Huzur Veren Terapi Mavisi */
+            --bg-body: #f7f5f0;       /* Yumuşak Krem / Parşömen */
+            --bg-card: #ffffff;
+            --text-main: #2b3a42;
+            --text-muted: #5a6b7c;
+            --border: #ebdcb9;
+            --radius: 20px;
+            --shadow: 0 15px 30px rgba(30, 61, 89, 0.03);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Alanı */
+        header {
+            background: linear-gradient(rgba(30, 61, 89, 0.9), rgba(30, 61, 89, 0.96)), url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2070') no-repeat center center/cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 140px 20px 110px;
+            border-bottom: 5px solid var(--primary);
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ebdcb9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Bölüm Kartı */
+        section {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(235, 220, 185, 0.4);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            border-bottom: 1px solid #f2e9d4;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        /* Can Alıcı Noktalar Grid */
+        .points-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 35px 0;
+        }
+
+        .point-card {
+            background: #fbfbfa;
+            border-left: 4px solid var(--primary);
+            padding: 30px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            transition: var(--transition);
+        }
+
+        .point-card:hover {
+            transform: translateX(5px);
+            background: #fffdf9;
+            box-shadow: 0 5px 15px rgba(188, 152, 106, 0.1);
+        }
+
+        .point-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .point-card p {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Büyük Vurgu Bloğu */
+        .callout {
+            background: linear-gradient(135deg, #1e3d59, #122538);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .callout p {
+            color: #e1e9f0;
+            font-style: italic;
+            font-size: 1.15rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Makam Kartları */
+        .makam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .makam-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .makam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(141, 110, 69, 0.08);
+            border-color: var(--primary);
+        }
+
+        .makam-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 0.6rem;
+            background: #eef3f7;
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .makam-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .makam-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 5px solid var(--primary);
+        }
+
+        footer p {
+            color: #a1b5c7;
+            text-align: center;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            .points-grid { grid-template-columns: 1fr; gap: 20px; }
+            section { padding: 30px 20px; }
+            h2 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Şifanın Frekansı</h1>
+        <p>Gevher Nesibe Şifahanesinde Akustik Deha ve Musikinin Nörolojik Tedavi Yöntemleri</p>
+    </header>
+
+    <div class="container">
+
+        <!-- BÖLÜM 1: SİSTEMİN ÖZÜ VE CAN ALICI NOKTALAR -->
+        <section>
+            <h2>Tedavi Sisteminin Matematiksel ve Fiziksel Altyapısı</h2>
+            <p>13. yüzyılda Kayseri'de uygulanan musiki terapi, mistik veya rastgele bir rahatlama seansından çok uzaktı. İslam filozofları Fârâbî ve İbn-i Sînā'nın ses dalgaları, insan psikolojisi ve beden sıvıları (hümoral teori) üzerine geliştirdiği bilimsel tezlere dayanıyordu. Selçuklu hekimleri, her ses frekansının beyinde ve sinir sisteminde spesifik bir karşılığı olduğunu deneysel olarak fark etmişlerdi.</p>
+            
+            <div class="points-grid">
+                <!-- Nokta 1 -->
+                <div class="point-card">
+                    <h3>Beyaz Gürültü Filtresi</h3>
+                    <p>Bimarhane avlusunun tam merkezinde yer alan fıskiyeli havuz, sistemin ana tuvalidir. Suyun mermere çarpma debisi, dışarıdan gelen ani ve irkiltici sesleri maskeleyen doğal bir "beyaz gürültü" (white noise) üretirdi. Bu akustik perde, hastanın dış dünya sanrılarını ve paranoiasını bloke ederek zihni müziğe duyarlı hale getiriyordu.</p>
+                </div>
+                <!-- Nokta 2 -->
+                <div class="point-card">
+                    <h3>Amfisiz Akustik Deha</h3>
+                    <p>Akıl hastalarının kalabalık ortamlarda ajite olacağını bilen mimarlar, hastaları tek bir salonda toplamadı. Müzisyenler merkezi eyvanda icra yaparken; ses, tavan tonozlarındaki özel kavisler ve akustik kanallar sayesinde homojen bir şekilde yayılarak her hastanın kendi mahrem odasındaki ses deliklerinden içeri süzülürdü.</p>
+                </div>
+                <!-- Nokta 3 -->
+                <div class="point-card">
+                    <h3>Sirkadiyen Senkronizasyon</h3>
+                    <p>Hekimler insan biyolojisinin günün saatlerine göre değiştiğini savunurdu. Bu erken sirkadiyen ritim bilgisiyle; gün ağarırken uykusuzluk ve melankoli için farklı, gün ortası kuruntular için farklı, yatsı vakti ise derin uyku modunu tetikleyecek farklı frekanstaki makamlar birer tıbbi reçete gibi uygulanırdı.</p>
+                </div>
+                <!-- Nokta 4 -->
+                <div class="point-card">
+                    <h3>Enstrüman Kimyası</h3>
+                    <p>Tedavide kullanılan enstrümanlar titizlikle seçilirdi. Neyin üfleme sesindeki nefes derinliği solunum ritmini düzenlerken; tel dökümlü rebap ve udun tellere vurulma anındaki titreşim frekansları, somatik kas kasılmalarını gevşetmek ve nabzı yavaşlatmak için birer nörolojik uyarıcı olarak kullanılıyordu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VURGU SÖZÜ -->
+        <div class="callout">
+            <p>"Orta Çağ Avrupası'nda akıl hastalarının içindeki kötü ruhları çıkarmak için bedenleri yakılırken; Gevher Nesibe'de suyun ritmi ve makamların matematiğiyle ruhun incinen yerleri onarılıyordu."</p>
+        </div>
+
+        <!-- BÖLÜM 2: MAKAM REÇETELERİ -->
+        <section>
+            <h2>Fizyolojik Uyuma Göre Makam Reçeteleri</h2>
+            <p>Şifahanede haftada üç gün verilen canlı konserlerde, hastaların teşhislerine göre aşağıdaki makam havuzundan seçilen spesifik frekanslar dinletilirdi:</p>
+
+            <div class="makam-grid">
+                <!-- Rehavi -->
+                <div class="makam-card">
+                    <span class="makam-badge">Şafak Vakti</span>
+                    <h3>Rehavî Makamı</h3>
+                    <p>Derin depresyon, ağlama krizleri ve akut melankoli hastaları için panzehirdi. Zihni ürkütücü kuruntulardan temizler, hastaya bir hafiflik ve yeni güne başlama enerjisi aşılardı.</p>
+                </div>
+                <!-- Rast -->
+                <div class="makam-card">
+                    <span class="makam-badge">Kuşluk Vakti</span>
+                    <h3>Rast Makamı</h3>
+                    <p>Hastaya mutlak bir neşe, içsel huzur ve özgüven aşılardı. Psikolojik kökenli felç durumlarında, kas spazmlarında ve dirençli migren ağrılarında kasları gevşetici etkisi büyüktü.</p>
+                </div>
+                <!-- Hicaz -->
+                <div class="makam-card">
+                    <span class="makam-badge">Yatsı Vakti</span>
+                    <h3>Hicaz Makamı</h3>
+                    <p>Parasempatik sinir sistemini uyararak kalp ritmini yavaşlatırdı. Ağır uykusuzluk (insomnia) ve gece gelen panik ataklar için dönemin en güçlü doğal uyku ilacı ve sakinleştiricisiydi.</p>
+                </div>
+                <!-- Buselik -->
+                <div class="makam-card">
+                    <span class="makam-badge">Öğle Vakti</span>
+                    <h3>Buselik Makamı</h3>
+                    <p>Zihindeki takıntıları, paranoyaları ve kronik anksiyeteyi (vesvese) dağıtmakta ustaydı. Kan dolaşımını dengeleyerek somatik sırt ve eklem ağrılarını hafifletirdi.</p>
+                </div>
+                <!-- Neva -->
+                <div class="makam-card">
+                    <span class="makam-badge">Akşamüstü</span>
+                    <h3>Neva Makamı</h3>
+                    <p>Gönül okşayıcı ve ferahlatıcı tınılara sahipti. Şizofreni benzeri ağır vakalarda görülen korkutucu sanrıları (halüsinasyonları) bastırır, zihnin gerçeklik algısını desteklerdi.</p>
+                </div>
+                <!-- Hüseyni -->
+                <div class="makam-card">
+                    <span class="makam-badge">Sabah Erken</span>
+                    <h3>Hüseynî Makamı</h3>
+                    <p>Ferahlık ve serinlik hissi uyandıran bir frekanstı. Çocuk hastalarda ve ajite yetişkinlerde yüksek ateşi düşürmek ve metabolik yangıları sakinleştirmek için kullanılırdı.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Gevher Nesibe Şifahanesi Musiki Terapi Ekolü — Sesin Fiziğini Ruhun Kimyasıyla Birleştiren Bilim Mirası</p>
+    </footer>
+
+</body>
+</html>
